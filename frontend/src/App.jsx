@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const user = fetchUser();
-    console.log("user from app",user)
+    // console.log("user from app",user)
 
     if (!user) {
       navigate("/login");

@@ -17,13 +17,13 @@ const Home = () => {
   const scrollRef = useRef(null);
 
   const userInfo = fetchUser();
-  console.log("userInfo",userInfo)
+  // console.log("userInfo",userInfo)
 
   useEffect(() => {
     const query = userQuery(userInfo?.userId);
-    console.log("Query",query)
+    // console.log("Query",query)
     client.fetch(query).then((data) => {
-      console.log("data of user", data);
+      // console.log("data of user", data);
       setUser(data[0]);
     });
   }, []);

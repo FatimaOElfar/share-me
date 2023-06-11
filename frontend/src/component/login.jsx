@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Login() {
       const navigate = useNavigate(); 
     const responseGoogle=async(response)=>{
-      console.log(response)
+      // console.log(response)
       const {access_token} = response;
       let userInfo = await axios.get(
         "https://people.googleapis.com/v1/people/me?personFields=names,photos,metadata",
@@ -26,7 +26,7 @@ export default function Login() {
     const photo = photos[0].url;
 
     const userData = { userId, username, photo };
-    console.log(userData)
+    // console.log(userData)
 
     localStorage.setItem('user',JSON.stringify(userData))
     

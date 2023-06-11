@@ -9,24 +9,24 @@ const Feed = () => {
   const [loading, setLoading] = useState(false);
   const [pins, setPins] = useState(null);
   const { categoryId } = useParams();
-  console.log("catID", categoryId);
+  // console.log("catID", categoryId);
   useEffect(() => {
     setLoading(true);
     if (categoryId) {
       const query = searchQuery(categoryId);
-      console.log("searchquery", query);
+      // console.log("searchquery", query);
       client.fetch(query).then((data) => {
         setPins(data);
         setLoading(false);
       });
 
-      console.log("searchquery", query);
+      // console.log("searchquery", query);
     } else {
       const query = feedQuery 
-      console.log("feedQu",query)
+      // console.log("feedQu",query)
       client.fetch(feedQuery).then((data) => {
       
-        console.log("feedData", data)
+        // console.log("feedData", data)
         setPins(data);
         setLoading(false);
       });
